@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Emotion Changing Character</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 20px;
+            background-color: #f0f0f0;
+        }
+        #character {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            background-color: #ffd700;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 100px;
+            margin-bottom: 20px;
+        }
+        button {
+            font-size: 18px;
+            padding: 10px 20px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div id="character">😊</div>
+    <button onclick="changeEmotion()">Change Emotion</button>
+
+    <script>
+        const emotions = ['😊', '😈', '😢', '😞'];
+        let currentEmotion = 0;
+
+        function changeEmotion() {
+            currentEmotion = (currentEmotion + 1) % emotions.length;
+            document.getElementById('character').innerHTML = emotions[currentEmotion];
+        }
+    </script>
+</body>
+</html>
